@@ -2,6 +2,8 @@ baseURL = 'https://ilscev.github.io/bc-gallery/'
 languageCode = 'de-de'
 title = 'BC Gallerie'
 theme = "KeepIt"
+timeout = 120000
+
 [params.share]
 Twitter = false
 Facebook = false
