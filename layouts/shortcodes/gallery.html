@@ -1,0 +1,13 @@
+
+{{ $image := (.Page.Resources.ByType "image") }}
+{{ with $image }}
+    {{ range . }}
+    {{ $resized := .Fill "150x115 q20" }}
+    <figure>
+        <img data-src="{{ .Permalink }}" src="{{ $resized.Permalink }}" />
+    </figure>    
+    {{ end }}
+{{ end }}
+{{.Page.Scratch.Set "postHasImages" true}}
+
+
