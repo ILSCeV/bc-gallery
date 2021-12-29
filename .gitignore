@@ -5,6 +5,8 @@
 # Generated files by hugo
 /public/
 /resources/_gen/
+/node_modules
+/static/gen
 
 # Executable may be added to repository
 hugo.exe

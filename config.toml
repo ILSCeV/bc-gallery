@@ -4,7 +4,7 @@ title = 'BC Gallerie'
 theme = "binario"
 timeout = 120000
 [Params]
- customCSS=["css/gallery.css"]
+ customCSS=["gen/gallerystyle.css"]
 [params.share]
 Twitter = false
 Facebook = false
