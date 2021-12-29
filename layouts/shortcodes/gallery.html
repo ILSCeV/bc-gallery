@@ -1,13 +1,16 @@
-
+<div class="row">
 {{ $image := (.Page.Resources.ByType "image") }}
 {{ with $image }}
     {{ range . }}
     {{ $resized := .Fill "150x115 q20" }}
+    <div class="column">
     <figure>
         <img data-src="{{ .Permalink }}" alt="{{ .Name }}" src="{{ $resized.Permalink }}" onclick="showImage(this);" />
-    </figure>    
+    </figure>  
+    </div>  
     {{ end }}
 {{ end }}
+</div>
 <div class="container">
     <!-- Close the image -->
     <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>

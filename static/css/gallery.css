@@ -1,8 +1,6 @@
  /* The grid: Four equal columns that floats next to each other */
- .column {
-    float: left;
-    width: 25%;
-    padding: 10px;
+ .column {    
+display: inline-block;
   }
   
   /* Style the images inside the grid */
@@ -15,6 +13,11 @@
     opacity: 1;
   }
   
+  div.row {
+    overflow: auto;
+  white-space: nowrap;
+  }
+
   /* Clear floats after the columns */
   .row:after {
     content: "";
