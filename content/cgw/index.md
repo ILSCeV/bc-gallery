@@ -1,8 +1,6 @@
 ---
-
-title: "Clubgeburtstagwoche"
-
+title: "Clubgeburtstagswoche"
+draft: false
 ---
 
 {{< gallery >}} 
-
