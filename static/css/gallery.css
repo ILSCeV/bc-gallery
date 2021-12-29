@@ -49,3 +49,21 @@ div.row {
   font-size: 35px;
   cursor: pointer;
 }
+
+.nextPreviousButtons {
+  display: inline-block;
+  margin: auto;
+
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  /* top: 50%; */
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
