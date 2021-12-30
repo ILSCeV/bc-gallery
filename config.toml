@@ -1,5 +1,6 @@
 baseURL = 'https://ilscev.github.io/bc-gallery/'
 languageCode = 'de-de'
+defaultContentLanguage = 'de'
 title = 'BC Gallerie'
 theme = "binario"
 timeout = 120000
