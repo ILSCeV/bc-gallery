@@ -1,6 +1,6 @@
 ---
 
-title: "Klobild"
+title: "Mosaik über den Pissoirs"
 
 ---
 
