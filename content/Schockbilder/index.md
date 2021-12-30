@@ -4,5 +4,5 @@ title: "Schockbilder"
 
 ---
 
-{{< gallery >}} 
+![Schockbilder](img/schockbilder.jpg)
 
