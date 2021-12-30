@@ -4,12 +4,12 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: {
-    galleryjs: "./assets/js/gallery.js",
-    gallerystyle:"./assets/css/gallery.css"
+    'assets/gen/galleryjs': "./assets/js/gallery.jsx",
+    'static/gen/gallerystyle':"./assets/scss/gallery.scss"
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "static/gen"),
+    path: path.resolve(__dirname, "./"),
     publicPath: "/",
   },
   resolve: {
@@ -26,6 +26,7 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
+            options: { presets: ['@babel/env','@babel/preset-react'] },
           },
         ],
       },
@@ -82,7 +83,7 @@ module.exports = {
         ],
       },
     ],
-  },
+  },  
   plugins: [
     // Extracts CSS into separate files
     new MiniCssExtractPlugin({

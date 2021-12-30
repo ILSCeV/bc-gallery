@@ -1,69 +1,16 @@
-<div class="row">
-  {{ $image := (.Page.Resources.ByType "image") }} {{ with $image }} {{ range .
+<div id="galleryContainer"></div>
+{{ $image := (.Page.Resources.ByType "image") }}
+<script id="galleryData">
+  window.images = [
+  {{ with $image }} {{ range .
   }} {{ $resized := .Fill "150x115 q20" }}
-  <div class="column">
-    <figure>
-      <img
-        data-src="{{ .Permalink }}"
-        alt="{{ .Name }}"
-        src="{{ $resized.Permalink }}"
-        onclick="showImage(this);"
-      />
-    </figure>
-  </div>
+   {
+    original:'{{ .Permalink }}',
+    thumbnail:'{{ $resized.Permalink }}'
+  },
   {{ end }} {{ end }}
-</div>
-<div class="container">
-  <div class="center">
-    <button id="previousButton" class="nextPreviousButtons">&#60;</button>
-    <button id="nextButton" class="nextPreviousButtons">&#62;</button>
-  </div>
-  <!-- Close the image -->
-  <span onclick="this.parentElement.style.display='none'" class="closebtn"
-    >&times;</span
-  >
-
-  <!-- Expanded image -->
-  <img id="expandedImg" style="width: 100%" />
-
-  <!-- Image text -->
-  <div id="imgtext"></div>
-</div>
-
-<script>
-  function showImage(imgs) {
-    // Get the expanded image
-    var expandImg = document.getElementById("expandedImg");
-    // Get the image text
-    var imgText = document.getElementById("imgtext");
-    // Get Previous
-    var previousBtn = document.getElementById("previousButton");
-    // Get next
-    var nextBtn = document.getElementById("nextButton");
-    // Use the same src in the expanded image as the image being clicked on from the grid
-    expandImg.src = imgs.dataset.src;
-    // Use the value of the alt attribute of the clickable image as text inside the expanded image
-    imgText.innerHTML = imgs.alt;
-    // Show the container element (hidden with CSS)
-    expandImg.parentElement.style.display = "block";
-
-    previousBtn.onclick = function () {
-      var previous = imgs.parentElement.parentElement.previousElementSibling;
-      if (previous) {
-        previous.querySelector("img").click();
-      }
-    };
-
-    nextBtn.onclick = function () {
-      var next = imgs.parentElement.parentElement.nextElementSibling;
-      if (next) {
-        next.querySelector("img").click();
-      }
-    };
-  }
-  function loadImage() {
-    var firstImg = document.querySelector(".column > figure > img");
-    firstImg.click();
-  }
-  loadImage();
+  ];
 </script>
+
+{{ $js := resources.GetMatch "gen/galleryjs.js" }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>

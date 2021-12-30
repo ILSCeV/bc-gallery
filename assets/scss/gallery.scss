@@ -1,0 +1,59 @@
+
+.column {
+	display: inline-block;
+	img {
+		opacity: 0.8;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+div {
+	&.row {
+		overflow: auto;
+		white-space: nowrap;
+	}
+}
+.row {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.container {
+	position: relative;
+	display: none;
+}
+#imgtext {
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	color: white;
+	font-size: 20px;
+}
+.closebtn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: white;
+	font-size: 35px;
+	cursor: pointer;
+}
+.nextPreviousButtons {
+	display: inline-block;
+	margin: auto;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.center {
+	margin: 0;
+	position: absolute;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
