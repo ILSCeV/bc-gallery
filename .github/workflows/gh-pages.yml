@@ -6,7 +6,7 @@ on:
       - main # Set a branch to deploy
   pull_request:
 env:
-  # renovate: datasource=github depName=nodejs/node
+  # renovate: datasource=github-releases depName=nodejs/node
   NODE_VERSION: 17  
 
 jobs:
