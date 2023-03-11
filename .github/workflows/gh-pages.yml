@@ -5,6 +5,9 @@ on:
     branches:
       - main # Set a branch to deploy
   pull_request:
+env:
+  # renovate: datasource=github depName=nodejs/node
+  NODE_VERSION='17'  
 
 jobs:
   deploy:
@@ -24,8 +27,8 @@ jobs:
           extended: true
       - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          node-version: '17'  
+        with:        
+          node-version: "$NODE_VERSION"
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
