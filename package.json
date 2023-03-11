@@ -30,7 +30,7 @@
     "css-loader": "^6.5.1",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^7.0.1",
-    "postcss-loader": "^6.2.1",
+    "postcss-loader": "^7.0.0",
     "querystring-es3": "^0.2.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
