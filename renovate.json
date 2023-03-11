@@ -2,5 +2,16 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    {
+      "fileMatch": ["^\\.github\\/workflows\\/.*\\.ya?ml$"],
+      "matchStrings": [
+        "node-version: '(?<currentValue>.+?)'"
+      ],
+      "depNameTemplate": "node",
+      "datasourceTemplate":"docker",
+      "versioningTemplate": "docker"
+    }
   ]
 }
